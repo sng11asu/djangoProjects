@@ -1,6 +1,7 @@
-from django.db import models
-# from django.contrib.postgres.fields import ArrayField
 import uuid
+
+from django.db import models
+
 
 class Genres(models.Model):
     genre = models.CharField(max_length=20)
@@ -25,4 +26,3 @@ class Counter(models.Model):
     status = models.CharField(max_length=15)
     def __str__(self):
         return f"{self.status}"
-     

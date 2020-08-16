@@ -1,15 +1,18 @@
-from rest_framework.views import APIView
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.authtoken.views import ObtainAuthToken
-from rest_framework.authtoken.models import Token
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated 
-from django.shortcuts import render
-from django.http import HttpResponse
-import requests
 import time
+
+import requests
+from django.http import HttpResponse
+from django.shortcuts import render
+from rest_framework.authtoken.models import Token
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from .models import Collections, Counter, Genres, Movies
 from .serializers import CollectionsSerializer, CounterSerializer
-from .models import Collections, Counter, Movies, Genres
+
 # Create your views here.
 
 class Register(ObtainAuthToken):
